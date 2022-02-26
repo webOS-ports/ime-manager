@@ -6,9 +6,10 @@
         "audio.management",
         "settings.query",
         "tts.operation",
-        "systemconfig.query",
+        "configd.query",
         "application.operation",
         "application.launcher",
-        "bluetooth.query"
+        "bluetooth.query",
+        "all"
     ]
 }
