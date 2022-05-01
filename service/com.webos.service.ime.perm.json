@@ -10,5 +10,17 @@
         "application.operation",
         "application.launcher",
         "bluetooth.query"
+    ],
+    "org.maliit": [
+        "notification.operation",
+        "audio.operation",
+        "audio.query",
+        "audio.management",
+        "settings.query",
+        "tts.operation",
+        "systemconfig.query",
+        "application.operation",
+        "application.launcher",
+        "bluetooth.query"
     ]
 }

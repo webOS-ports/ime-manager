@@ -3,6 +3,7 @@
     \"type\":\"privileged\",
     \"trustLevel\":\"oem\",
     \"allowedNames\":[\"com.webos.service.ime*\","org.maliit\"],
+    \"allowedNames\":[\"com.webos.service.ime*\",\"org.maliit\"],
     \"permissions\":[
         {
             \"service\":\"com.webos.service.ime*\",
