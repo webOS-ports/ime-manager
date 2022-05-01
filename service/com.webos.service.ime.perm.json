@@ -10,5 +10,17 @@
         "applications.internal",
         "bluetooth.manage",
         "all"
+    ],
+    "org.maliit": [
+        "notifications.manage",
+        "notifications",
+        "media",
+        "settings.read",
+        "settings",
+        "services",
+        "applications.launch",
+        "applications.internal",
+        "bluetooth.manage",
+        "all"
     ]
 }

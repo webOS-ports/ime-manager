@@ -1,7 +1,7 @@
 {
     \"exeName\":\"$$WEBOS_INSTALL_BINS/MaliitServer\",
     \"type\":\"privileged\",
-    \"allowedNames\":[\"com.webos.service.ime*\","org.maliit\"],
+    \"allowedNames\":[\"com.webos.service.ime*\",\"org.maliit\"],
     \"permissions\":[
         {
             \"service\":\"com.webos.service.ime*\",
