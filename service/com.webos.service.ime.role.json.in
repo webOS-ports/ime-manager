@@ -1,13 +1,19 @@
 {
     \"exeName\":\"$$WEBOS_INSTALL_BINS/MaliitServer\",
     \"type\":\"privileged\",
-    \"allowedNames\":[\"com.webos.service.ime*\"],
+    \"allowedNames\":[\"com.webos.service.ime*\","org.maliit\"],
     \"permissions\":[
         {
             \"service\":\"com.webos.service.ime*\",
             \"outbound\":[\"com.webos.notification\",\"com.webos.service.tts\",\"com.webos.settingsservice\",\"com.webos.service.config\",
             \"com.webos.service.nlp\",\"com.webos.audio\",\"com.webos.applicationManager\",\"com.webos.service.bluetooth\",
-            \"com.webos.service.mrcu\"]
+            \"com.webos.service.mrcu\", \"org.maliit\"]
+        },
+        {
+            \"service\":\"org.maliit\",
+            \"outbound\":[\"com.webos.notification\",\"com.webos.service.tts\",\"com.webos.settingsservice\",\"com.webos.service.config\",
+            \"com.webos.service.nlp\",\"com.webos.audio\",\"com.webos.applicationManager\",\"com.webos.service.bluetooth\",
+            \"com.webos.service.mrcu\", \"org.maliit\"]
         }
     ]
 }
