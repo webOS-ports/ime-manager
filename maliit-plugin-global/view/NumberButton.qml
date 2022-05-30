@@ -50,7 +50,7 @@ ButtonBase {
 
     Connections {
         target: PluginProxy
-        onKeyReleased : {
+        function onKeyReleased() {
             if (isReleased && (numberButton.state === "Select"))
                 numberButton.state = "Focus";
         }

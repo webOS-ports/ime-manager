@@ -362,7 +362,7 @@ Item {
 
     Connections {
         target: PluginProxy
-        onKeyReleased : {
+        function onKeyReleased() {
             if (isReleased && (languageChangeButton.state === "Select"))
                 languageChangeButton.state = "Focus";
             else if (isReleased && (symbolButton.state === "Select"))

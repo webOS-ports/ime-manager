@@ -212,7 +212,7 @@ Rectangle {
         }
         Connections {
             target: PluginProxy
-            onKeyReleased : {
+            function onKeyReleased() {
                 if (isReleased && (symbolButton.state === "Select"))
                     symbolButton.state = "Focus";
                 else if (isReleased && (deleteButton.state === "Select"))

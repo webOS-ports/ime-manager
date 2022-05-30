@@ -468,7 +468,7 @@ Item {
             }
             Connections {
                 target: PluginProxy
-                onKeyReleased : {
+                function onKeyReleased() {
                     if (isReleased && predictionMode && (nextButton.state === "Select"))
                         nextButton.state = "Focus";
                 }
