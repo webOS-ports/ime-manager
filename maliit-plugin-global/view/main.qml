@@ -343,9 +343,14 @@ Rectangle {
             root.reset();
         }
         function onTranslatorChanged(speakLanguage) {
-            style.setFontForMenuLocale(PluginProxy.translatorLocale)
-            if (speakLanguage == false) return;
-            if (inputSource == 0 || visible == false) return; // because reading lang name through toast popup
+            style.setFontForMenuLocale(PluginProxy.translatorLocale);
+            if (speakLanguage === false) {
+                return;
+            }
+            if (inputSource == 0 || visible == false) { 
+                // because reading lang name through toast popup
+                return; 
+            }            
             ttsService.speakButton(globalStringModel.getStringLangCode(langCode));
         }
         function onCursorVisibleChanged() {
