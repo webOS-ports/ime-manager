@@ -53,7 +53,7 @@ Item {
 
     Connections {
         target: PluginProxy
-        onKeyReleased : {
+        function onKeyReleased() {
             if (isReleased && (spaceButton.state === "Select"))
                 spaceButton.state = "Focus";
         }

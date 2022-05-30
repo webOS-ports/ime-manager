@@ -175,7 +175,7 @@ Item {
 
     Connections {
         target: PluginProxy
-        onKeyReleased : {
+        function onKeyReleased() {
             if (isReleased && (deleteButton.state === "Select"))
                 deleteButton.state = "Focus";
             else if (isReleased && (enterButton.state === "Select"))
