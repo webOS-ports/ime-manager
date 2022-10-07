@@ -240,7 +240,8 @@ void LayoutLoader::makeLayout(QJsonObject src)
     QJsonArray::iterator itShiftKeys = shiftKeys.begin();
     QJsonArray expandKeys = src.find("Expand_keys").value().toObject().find("Key").value().toArray();
     QJsonArray::iterator itExpandKeys = expandKeys.begin();
-    QJsonArray expandShiftKeys = src.find("Expand_shift_keys").value().toObject().find("Key").value().toArray();
+    QJsonArray expandShiftKeys;
+    if(src.contains("Expand_shift_keys")) expandShiftKeys = src.find("Expand_shift_keys").value().toObject().find("Key").value().toArray();
     QJsonArray::iterator itExpandShiftKeys = expandShiftKeys.begin();
 
     QJsonArray keys;
@@ -313,7 +314,7 @@ void LayoutLoader::makeLayout(QJsonObject src)
             else
                 ++itExpandShiftKeys;
         }
-        if (itExpandShiftKeys != expandKeys.end()) {
+        if (itExpandShiftKeys != expandShiftKeys.end()) {
             val = (*itExpandShiftKeys).toObject().find("keylabel").value();
             if (val.isString() && (val.toString() != EMPTY_STRING)) {
                 obj.insert("expandShiftedChar", val.isString() ? val : QJsonValue(EMPTY_STRING));
@@ -327,10 +328,10 @@ void LayoutLoader::makeLayout(QJsonObject src)
 
         keys.push_back(QJsonValue(obj));
 
-        ++itNormalKeys;
-        ++itShiftKeys;
-        ++itExpandKeys;
-        ++itExpandShiftKeys;
+        if (itNormalKeys != normalKeys.end()) ++itNormalKeys;
+        if (itShiftKeys != shiftKeys.end()) ++itShiftKeys;
+        if (itExpandKeys != expandKeys.end()) ++itExpandKeys;
+        if (itExpandShiftKeys != expandShiftKeys.end()) ++itExpandShiftKeys;
     }
 
     /* make json object */
