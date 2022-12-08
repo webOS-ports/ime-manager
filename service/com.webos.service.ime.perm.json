@@ -9,6 +9,7 @@
         "notification.operation",
         "settings.query",
         "systemconfig.query",
+        "systemsettings.management",
         "systemsettings.query",
         "tts.operation"
     ],
@@ -22,6 +23,7 @@
         "notification.operation",
         "settings.query",
         "systemconfig.query",
+        "systemsettings.management",
         "systemsettings.query",
         "tts.operation"
     ]
