@@ -299,17 +299,17 @@ Rectangle {
 
     Connections {
         target: PluginProxy
-        onLanguageChanged: {
+        function onLanguageChanged (language) {
             root.label = (langCode === "ko") ? "KOR" : label;
             root.langCode = langCode;
 
             normalKeyboard.setLanguage(language, label, langCode, data);
         }
-        onShowLanguageNotification: {
+        function onShowLanguageNotification () {
             lunaService.showLanguageNotification(label)
         }
 
-        onVisibleChanged: {
+        function onVisibleChanged() {
             if (!visible) {
                 root.reset();
                 if (state === "Normal-Keyboard")
@@ -324,10 +324,10 @@ Rectangle {
             }
         }
 
-        onLanguageCountChanged: {
+        function onLanguageCountChanged(languageCount) {
             normalKeyboard.activateLanguageButton = (languageCount > 1) ? true : false
         }
-        onForceFocusTo: {
+        function onForceFocusTo() {
             switch (label) {
             case "Enter":
                 setFocusToEnter();
@@ -339,14 +339,21 @@ Rectangle {
                 break;
             }
         }
-        onResetRequested: root.reset()
-        onTranslatorChanged: {
-            style.setFontForMenuLocale(PluginProxy.translatorLocale)
-            if (speakLanguage == false) return;
-            if (inputSource == 0 || visible == false) return; // because reading lang name through toast popup
+        function onResetRequested() { 
+            root.reset();
+        }
+        function onTranslatorChanged(speakLanguage) {
+            style.setFontForMenuLocale(PluginProxy.translatorLocale);
+            if (speakLanguage === false) {
+                return;
+            }
+            if (inputSource == 0 || visible == false) { 
+                // because reading lang name through toast popup
+                return; 
+            }            
             ttsService.speakButton(globalStringModel.getStringLangCode(langCode));
         }
-        onCursorVisibleChanged: {
+        function onCursorVisibleChanged() {
             console.warn("IMEManager cursor visible : " + cursorVisible);
             root.pointerVisible = cursorVisible;
             setDefaultFocusOnVirtualKeybaord();

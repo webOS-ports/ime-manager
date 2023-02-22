@@ -197,13 +197,13 @@ Rectangle {
 
     Connections {
         target: Prediction
-        onActiveChanged: {
+        function onActiveChanged() {
             if (!active) {
                 root.predictionMode = false;
                 root.predictionIndex = 0;
             }
         }
-        onPredictionListChanged: {
+        function onPredictionListChanged() {
             if (predictionMode) {
                 root.predictionIndex = 0;
                 root.drawPredictionLayout();

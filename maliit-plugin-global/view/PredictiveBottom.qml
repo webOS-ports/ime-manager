@@ -162,7 +162,7 @@ Item {
             }
             Connections {
                 target: PluginProxy
-                onKeyReleased : {
+                function onKeyReleased() {
                     if (isReleased && constantPrediction && predictionBar.predictionIndex !== -1 && (predictionRepeater.itemAt(predictionBar.predictionIndex).state === "Select")) {
                         predictionRepeater.itemAt(predictionBar.predictionIndex).state = "Focus";
                         predictionBar.predictionIndex = -1;
