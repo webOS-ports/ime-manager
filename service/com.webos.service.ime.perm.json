@@ -1,26 +1,30 @@
 {
     "com.webos.service.ime*": [
-        "notifications.manage",
-        "notifications",
-        "media",
-        "settings.read",
-        "settings",
-        "services",
-        "applications.launch",
-        "applications.internal",
-        "bluetooth.manage",
-        "all"
+        "application.operation",
+        "application.launcher",
+        "audio.management",
+        "audio.operation",
+        "audio.query",
+        "bluetooth.query",
+        "notification.operation",
+        "settings.query",
+        "systemconfig.query",
+        "systemsettings.management",
+        "systemsettings.query",
+        "tts.operation"
     ],
     "org.maliit": [
-        "notifications.manage",
-        "notifications",
-        "media",
-        "settings.read",
-        "settings",
-        "services",
-        "applications.launch",
-        "applications.internal",
-        "bluetooth.manage",
-        "all"
+        "application.operation",
+        "application.launcher",
+        "audio.management",
+        "audio.operation",
+        "audio.query",
+        "bluetooth.query",
+        "notification.operation",
+        "settings.query",
+        "systemconfig.query",
+        "systemsettings.management",
+        "systemsettings.query",
+        "tts.operation"
     ]
 }
